@@ -1,0 +1,6 @@
+framework module VNetworkManager {
+  umbrella header "VNetworkManager.h"
+
+  export *
+  module * { export * }
+}

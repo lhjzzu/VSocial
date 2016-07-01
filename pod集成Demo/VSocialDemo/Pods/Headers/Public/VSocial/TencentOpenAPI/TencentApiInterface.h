@@ -1,0 +1,1 @@
+../../../../VSocial/sdk/Channels/QQSDK/TencentOpenAPI.framework/Headers/TencentApiInterface.h

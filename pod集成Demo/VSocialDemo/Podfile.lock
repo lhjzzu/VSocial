@@ -1,0 +1,21 @@
+PODS:
+  - VSocial (1.0.1):
+    - VSocial/Core (= 1.0.1)
+    - VSocial/QQSDK (= 1.0.1)
+    - VSocial/WBSDK (= 1.0.1)
+    - VSocial/WXSDK (= 1.0.1)
+  - VSocial/Core (1.0.1)
+  - VSocial/QQSDK (1.0.1):
+    - VSocial/Core
+  - VSocial/WBSDK (1.0.1):
+    - VSocial/Core
+  - VSocial/WXSDK (1.0.1):
+    - VSocial/Core
+
+DEPENDENCIES:
+  - VSocial
+
+SPEC CHECKSUMS:
+  VSocial: f7551df19e1a57797cf552c409cf84c0af7843be
+
+COCOAPODS: 0.39.0

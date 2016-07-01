@@ -1,0 +1,1 @@
+../../../VSocial/sdk/Channels/WXSDK/WXApiObject.h

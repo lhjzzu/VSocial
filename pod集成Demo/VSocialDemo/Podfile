@@ -1,0 +1,5 @@
+target 'VSocialDemo' do
+
+pod 'VSocial'
+
+end
