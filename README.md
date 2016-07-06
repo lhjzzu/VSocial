@@ -88,10 +88,10 @@
 
 * Appdelegate中
 
-        - (BOOL)application:(UIApplication *)application d
-        idFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+        - (BOOL)application:(UIApplication *)application 
+        didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
          // Override point for customization after application launch.
-               [[VSocial manager] regiserSocailApp];
+               [[VSocial manager] registerSocailApp];
 
          return YES;
         }
@@ -100,7 +100,7 @@
         options:(NSDictionary<NSString *,id> *)options
         {
     
-            [[VSocial manager] handleOpenURL:url withCompeltion
+            [[VSocial manager] handleOpenURL:url withCompletion
             :^(NSDictionary *infoDic, VSocialActionType type, 
             VSocialActionStatus status, NSString *msg) {
                 NSLog(@"********* infoDic = %@, type = %@,
@@ -112,7 +112,7 @@
         openURL:(nonnull NSURL *)url 
         sourceApplication:(nullable NSString *)sourceApplication 
         annotation:(nonnull id)annotation{
-            [[VSocial manager] handleOpenURL:url withCompeltion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
+            [[VSocial manager] handleOpenURL:url withCompletion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
         NSLog(@"********* infoDic = %@, type = %@, status = %@, msg = %@",infoDic,@(type),@(status),msg);
             }];
             return YES;
@@ -121,7 +121,7 @@
         {
     
             [[VSocial manager] handleOpenURL:url 
-            withCompeltion:^(NSDictionary *infoDic,        
+            withCompletion:^(NSDictionary *infoDic,        
              VSocialActionType type, VSocialActionStatus status, NSString *msg) {
                 NSLog(@"********* infoDic = %@,  type = %@, 
                 status = %@, msg = %@",infoDic,@(type),@(status),msg);
@@ -183,7 +183,7 @@
           }
      
      
-         你也可以自己调用socialWithReq:withType:withCompeltion:方法来定制自己的界面，
+         你也可以自己调用socialWithReq:withType:withCompletion:方法来定制自己的界面，
          如果只是想改图片的话，把原来的删除替换成自己的图片就可以了，但是名字要一样。
       
       

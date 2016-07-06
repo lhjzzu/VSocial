@@ -263,7 +263,7 @@
 - (void)v_shareBtnClick:(UIButton *)sender {
     VSocialActionType type = [objc_getAssociatedObject(sender, _cmd) integerValue];
     self.req.action = VSOCIALACTION_SHARE;
-    [[VSocial manager] socialWithReq:self.req withType:type withCompeltion:self.completion];
+    [[VSocial manager] socialWithReq:self.req withType:type withCompletion:self.completion];
 }
 #pragma mark -- 取消
 - (void)v_cancelBtnClick:(UIButton *)sender {

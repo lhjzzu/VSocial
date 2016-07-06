@@ -59,9 +59,9 @@ static VSocialCompletion openCompletion;
     
 }
 
-- (void)handleOpenURL:(NSURL *)url withCompeltion:(VSocialCompletion)compeltion
+- (void)handleOpenURL:(NSURL *)url withCompletion:(VSocialCompletion)completion
 {
-    openCompletion = compeltion;
+    openCompletion = completion;
     if ([TencentOAuth CanHandleOpenURL:url]) {
          [TencentOAuth HandleOpenURL:url];
     } else {

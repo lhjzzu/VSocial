@@ -102,7 +102,7 @@ typedef void(^VSocialCompletion) (NSDictionary *infoDic,VSocialActionType type,V
  * 一定要在info.plist的URL Types中设置所有想要集成社交软件的scheme(微信，qq，微博)
  *  注册所有的应用
  */
-- (void)regiserSocailApp;
+- (void)registerSocailApp;
 
 /**
  *  @brief            处理微信/微博/qq通过URL启动App时传递的数据
@@ -113,18 +113,18 @@ typedef void(^VSocialCompletion) (NSDictionary *infoDic,VSocialActionType type,V
 
  
  *  @param url        微信/微博/qq启动第三方应用时传递过来的URL
- *  @param compeltion 操作完成的回调
+ *  @param completion 操作完成的回调
  */
-- (void)handleOpenURL:(NSURL *)url withCompeltion:(VSocialCompletion)compeltion;
+- (void)handleOpenURL:(NSURL *)url withCompletion:(VSocialCompletion)completion;
 
 /**
  *  调用社会化组件
  *
  *  @param req        操作传入的model
  *  @param type       操作的类型
- *  @param compeltion 操作完成的回调
+ *  @param completion 操作完成的回调
  */
-- (void)socialWithReq:(VSocialActionReq *)req withType:(VSocialActionType)type withCompeltion:(VSocialCompletion)compeltion;
+- (void)socialWithReq:(VSocialActionReq *)req withType:(VSocialActionType)type withCompletion:(VSocialCompletion)completion;
 
 
 

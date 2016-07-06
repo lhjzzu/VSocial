@@ -91,11 +91,11 @@ static char *VSocialCompletionBlockInViewKey;
     VSocialActionType type = [objc_getAssociatedObject(sender, &VSocialTypeInLoginBtnKey) integerValue];
     VSocialCompletion completion = objc_getAssociatedObject(self, &VSocialCompletionBlockInViewKey);
     if (type == VSOCIALACTIONTYPE_WB) {
-        [[VSocial manager] socialWithReq:self.v_wbReq withType:VSOCIALACTIONTYPE_WB withCompeltion:completion];
+        [[VSocial manager] socialWithReq:self.v_wbReq withType:VSOCIALACTIONTYPE_WB withCompletion:completion];
     } else if (type == VSOCIALACTIONTYPE_WX) {
-        [[VSocial manager] socialWithReq:self.v_wxReq withType:VSOCIALACTIONTYPE_FRIEND withCompeltion:completion];
+        [[VSocial manager] socialWithReq:self.v_wxReq withType:VSOCIALACTIONTYPE_FRIEND withCompletion:completion];
     } else if (type == VSOCIALACTIONTYPE_QQ) {
-        [[VSocial manager] socialWithReq:self.v_qqReq withType:VSOCIALACTIONTYPE_QQ withCompeltion:completion];
+        [[VSocial manager] socialWithReq:self.v_qqReq withType:VSOCIALACTIONTYPE_QQ withCompletion:completion];
     }
 }
 - (void)setV_wbReq:(VSocialActionReq *)v_wbReq

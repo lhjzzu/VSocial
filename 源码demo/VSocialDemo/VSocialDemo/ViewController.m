@@ -131,7 +131,7 @@
     VSocialActionReq *req = [[VSocialActionReq alloc] init];
     req.action = VSOCIALACTION_LOGIN;
     req.redirectURI = @"http://www.davebella.net.cn";
-    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_WB withCompeltion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
+    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_WB withCompletion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
         NSLog(@"infoDic = %@, type = %@, status = %@, msg = %@",infoDic,@(type),@(status),msg);
     }];
 }
@@ -144,7 +144,7 @@
     req.shareTitle = @"微博分享";
     req.shareText = @"啊哈哈";
     
-    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_WB withCompeltion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
+    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_WB withCompletion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
         NSLog(@"infoDic = %@, type = %@, status = %@, msg = %@",infoDic,@(type),@(status),msg);
     }];
 }
@@ -153,7 +153,7 @@
 - (void)copyBtnClick:(UIButton *)sender {
     VSocialActionReq *req = [[VSocialActionReq alloc] init];
     req.shareURL = @"http://www.baidu.com";
-    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_COPY withCompeltion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
+    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_COPY withCompletion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
         NSLog(@"infoDic = %@, type = %@, status = %@, msg = %@",infoDic,@(type),@(status),msg);
     }];
 }
@@ -162,7 +162,7 @@
     VSocialActionReq *req = [[VSocialActionReq alloc] init];
     req.action = VSOCIALACTION_LOGIN;
     req.appSecret = @"8a662f440bcdbe99f1ea302250b3d70b";
-    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_FRIEND withCompeltion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
+    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_FRIEND withCompletion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
         
         NSLog(@"infoDic = %@, type = %@, status = %@, msg = %@",infoDic,@(type),@(status),msg);
     }];
@@ -177,7 +177,7 @@
     req.shareTitle = @"微信分享";
     req.shareText = @"啊哈哈";
     
-    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_WX withCompeltion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
+    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_WX withCompletion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
         NSLog(@"infoDic = %@, type = %@, status = %@, msg = %@",infoDic,@(type),@(status),msg);
     }];
     
@@ -191,7 +191,7 @@
     req.shareTitle = @"朋友圈分享";
     req.shareText = @"啊哈哈";
     
-    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_FRIEND withCompeltion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
+    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_FRIEND withCompletion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
         NSLog(@"infoDic = %@, type = %@, status = %@, msg = %@",infoDic,@(type),@(status),msg);
     }];
     
@@ -202,7 +202,7 @@
     VSocialActionReq *req = [[VSocialActionReq alloc] init];
     req.action = VSOCIALACTION_LOGIN;
     
-    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_QQ withCompeltion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
+    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_QQ withCompletion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
         NSLog(@"infoDic = %@, type = %@, status = %@, msg = %@",infoDic,@(type),@(status),msg);
     }];
 }
@@ -215,7 +215,7 @@
     req.shareTitle = @"qq分享";
     req.shareText = @"啊哈哈";
     
-    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_QQ withCompeltion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
+    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_QQ withCompletion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
         NSLog(@"infoDic = %@, type = %@, status = %@, msg = %@",infoDic,@(type),@(status),msg);
     }];
 }
@@ -228,7 +228,7 @@
     req.shareTitle = @"空间分享";
     req.shareText = @"啊哈哈";
     
-    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_ZONE withCompeltion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
+    [[VSocial manager] socialWithReq:req withType:VSOCIALACTIONTYPE_ZONE withCompletion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
         NSLog(@"infoDic = %@, type = %@, status = %@, msg = %@",infoDic,@(type),@(status),msg);
     }];
 }
