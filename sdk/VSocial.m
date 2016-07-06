@@ -93,92 +93,92 @@ static NSString *qqScheme;
     }
     return self;
 }
-- (void)socialWithReq:(VSocialActionReq *)req withType:(VSocialActionType)type withCompeltion:(VSocialCompletion)compeltion
+- (void)socialWithReq:(VSocialActionReq *)req withType:(VSocialActionType)type withCompletion:(VSocialCompletion)completion
 {
    
     if (type == VSOCIALACTIONTYPE_WB) {
         //检测是否支持微博
         socialClass = NSClassFromString(@"VWeiBoSocailManager");
         if (![socialClass instanceMethodForSelector:@selector(wbSocialWithReq:withCompletion:)]) {
-            if (compeltion) {
-                compeltion(nil,VSOCIALACTIONTYPE_WB,VSOCIALACTIONSTATUS_INVAILD,@"社会化组件调起错误，没有微博这个渠道");
+            if (completion) {
+                completion(nil,VSOCIALACTIONTYPE_WB,VSOCIALACTIONSTATUS_INVAILD,@"社会化组件调起错误，没有微博这个渠道");
             }
             return;
         }
         if ([VSocialTool isEmpty:wbScheme]) {
-            if (compeltion) {
-                compeltion(nil,VSOCIALACTIONTYPE_WB,VSOCIALACTIONSTATUS_INVAILD,@"社会化组件调起错误，请在info.plist的URL Types中设置微博的scheme");
+            if (completion) {
+                completion(nil,VSOCIALACTIONTYPE_WB,VSOCIALACTIONSTATUS_INVAILD,@"社会化组件调起错误，请在info.plist的URL Types中设置微博的scheme");
             }
             return;
         }
-        [[socialClass manager] wbSocialWithReq:req withCompletion:compeltion];
+        [[socialClass manager] wbSocialWithReq:req withCompletion:completion];
     } else if (type == VSOCIALACTIONTYPE_WX || type == VSOCIALACTIONTYPE_FRIEND) {
         //检测是否支持微信
         socialClass = NSClassFromString(@"VWeiXinSocialManager");
         if (![socialClass instanceMethodForSelector:@selector(wxSocialWithReq:withType:withCompletion:)]) {
-            if (compeltion) {
-                compeltion(nil,VSOCIALACTIONTYPE_WB,VSOCIALACTIONSTATUS_INVAILD,@"社会化组件调起错误，没有微信这个渠道");
+            if (completion) {
+                completion(nil,VSOCIALACTIONTYPE_WB,VSOCIALACTIONSTATUS_INVAILD,@"社会化组件调起错误，没有微信这个渠道");
             }
             return;
         }
         if ([VSocialTool isEmpty:wxScheme]) {
-            if (compeltion) {
-                compeltion(nil,VSOCIALACTIONTYPE_WB,VSOCIALACTIONSTATUS_INVAILD,@"社会化组件调起错误，请在info.plist的URL Types中设置微信的scheme");
+            if (completion) {
+                completion(nil,VSOCIALACTIONTYPE_WB,VSOCIALACTIONSTATUS_INVAILD,@"社会化组件调起错误，请在info.plist的URL Types中设置微信的scheme");
             }
             return;
         }
         //调用
-        [[socialClass manager] wxSocialWithReq:req withType:type withCompletion:compeltion];
+        [[socialClass manager] wxSocialWithReq:req withType:type withCompletion:completion];
     } else if (type == VSOCIALACTIONTYPE_QQ || type == VSOCIALACTIONTYPE_ZONE) {
         //检测是否支持qq
         socialClass = NSClassFromString(@"VTencentSocialManager");
         if (![socialClass instanceMethodForSelector:@selector(qqSocialWithReq:withType:withCompletion:)]) {
-            if (compeltion) {
-                compeltion(nil,VSOCIALACTIONTYPE_WB,VSOCIALACTIONSTATUS_INVAILD,@"社会化组件调起错误，请在info.plist的URL Types中设置qq的scheme");
+            if (completion) {
+                completion(nil,VSOCIALACTIONTYPE_WB,VSOCIALACTIONSTATUS_INVAILD,@"社会化组件调起错误，请在info.plist的URL Types中设置qq的scheme");
             }
             return;
         }
         if ([VSocialTool isEmpty:qqScheme]) {
-            if (compeltion) {
-                compeltion(nil,VSOCIALACTIONTYPE_WB,VSOCIALACTIONSTATUS_INVAILD,@"社会化组件调起错误，请在info.plist的URL Types中设置qq的scheme");
+            if (completion) {
+                completion(nil,VSOCIALACTIONTYPE_WB,VSOCIALACTIONSTATUS_INVAILD,@"社会化组件调起错误，请在info.plist的URL Types中设置qq的scheme");
             }
             return;
         }
         //调用
-        [[socialClass manager] qqSocialWithReq:req withType:type withCompletion:compeltion];
+        [[socialClass manager] qqSocialWithReq:req withType:type withCompletion:completion];
     } else if (type == VSOCIALACTIONTYPE_COPY) {
         if (![VSocialTool isEmpty:req.shareURL]) {
             NSURL *url = [NSURL URLWithString:req.shareURL];
             UIPasteboard *pasteBoard = [UIPasteboard generalPasteboard];
             pasteBoard.URL = url;
-            if (compeltion) {
-                compeltion(nil,VSOCIALACTIONTYPE_COPY,VSOCIALACTIONSTATUS_SUCCESS,@"已经将链接复制到剪切板中");
+            if (completion) {
+                completion(nil,VSOCIALACTIONTYPE_COPY,VSOCIALACTIONSTATUS_SUCCESS,@"已经将链接复制到剪切板中");
             }
         } else {
-            if (compeltion) {
-                compeltion(nil,VSOCIALACTIONTYPE_COPY,VSOCIALACTIONSTATUS_INVAILD,@"社会化组件调起错误，复制的链接不能为空");
+            if (completion) {
+                completion(nil,VSOCIALACTIONTYPE_COPY,VSOCIALACTIONSTATUS_INVAILD,@"社会化组件调起错误，复制的链接不能为空");
             }
         }
     } else {
-        if (compeltion) {
-            compeltion(nil,VSOCIALACTIONTYPE_UNKNOW,VSOCIALACTIONSTATUS_INVAILD,@"社会化组件调起错误，传入未知类型");
+        if (completion) {
+            completion(nil,VSOCIALACTIONTYPE_UNKNOW,VSOCIALACTIONSTATUS_INVAILD,@"社会化组件调起错误，传入未知类型");
         }
     }
 }
 
 
-- (void)handleOpenURL:(NSURL *)url withCompeltion:(VSocialCompletion)compeltion
+- (void)handleOpenURL:(NSURL *)url withCompletion:(VSocialCompletion)completion
 {
     if ([url.scheme isEqualToString:wbScheme]) {
-        [[socialClass manager] handleOpenURL:url withCompeltion:compeltion];
+        [[socialClass manager] handleOpenURL:url withCompletion:completion];
     } else if ([url.scheme isEqualToString:wxScheme]) {
-        [[socialClass manager] handleOpenURL:url withCompeltion:compeltion];
+        [[socialClass manager] handleOpenURL:url withCompletion:completion];
     } else if ([url.scheme isEqualToString:qqScheme]) {
-        [[socialClass manager] handleOpenURL:url withCompeltion:compeltion];
+        [[socialClass manager] handleOpenURL:url withCompletion:completion];
     }
 }
 
-- (void)regiserSocailApp
+- (void)registerSocailApp
 {
     NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
     NSArray *schemeArr = [infoDic objectForKey:@"CFBundleURLTypes"];

@@ -32,9 +32,9 @@
  *  @brief            qq通过URL启动App时传递的数据
  *
  *  @param url        qq启动第三方应用时传递过来的URL
- *  @param compeltion 操作完成的回调
+ *  @param completion 操作完成的回调
  */
-- (void)handleOpenURL:(NSURL *)url withCompeltion:(VSocialCompletion)compeltion;
+- (void)handleOpenURL:(NSURL *)url withCompletion:(VSocialCompletion)completion;
 /**
  *  判断是否安装微博(如果不起作用，可用下面的方法替代)
  *  BOOL isWxInstalled = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"sinaweibo://"]];

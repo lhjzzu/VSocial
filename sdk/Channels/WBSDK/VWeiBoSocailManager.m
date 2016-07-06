@@ -53,9 +53,9 @@ static VWeiBoSocailManager *manager;
     
 }
 
-- (void)handleOpenURL:(NSURL *)url withCompeltion:(VSocialCompletion)compeltion
+- (void)handleOpenURL:(NSURL *)url withCompletion:(VSocialCompletion)completion
 {
-    openCompletion = compeltion;
+    openCompletion = completion;
     [WeiboSDK handleOpenURL:url delegate:[VWeiBoSocailManager manager]];
 }
 /**
