@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[VSocial manager] regiserSocailApp];
+    [[VSocial manager] registerSocailApp];
 
     return YES;
 }
@@ -47,7 +47,7 @@
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
 {
     
-    [[VSocial manager] handleOpenURL:url withCompeltion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
+    [[VSocial manager] handleOpenURL:url withCompletion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
         NSLog(@"********* infoDic = %@, type = %@, status = %@, msg = %@",infoDic,@(type),@(status),msg);
     }];
     
@@ -56,7 +56,7 @@
 }
 - (BOOL)application:(UIApplication *)app openURL:(nonnull NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(nonnull id)annotation{
     
-    [[VSocial manager] handleOpenURL:url withCompeltion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
+    [[VSocial manager] handleOpenURL:url withCompletion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
         NSLog(@"********* infoDic = %@, type = %@, status = %@, msg = %@",infoDic,@(type),@(status),msg);
     }];
     
@@ -65,7 +65,7 @@
 - (BOOL)application:(UIApplication *)app handleOpenURL:(nonnull NSURL *)url
 {
     
-    [[VSocial manager] handleOpenURL:url withCompeltion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
+    [[VSocial manager] handleOpenURL:url withCompletion:^(NSDictionary *infoDic, VSocialActionType type, VSocialActionStatus status, NSString *msg) {
         NSLog(@"********* infoDic = %@, type = %@, status = %@, msg = %@",infoDic,@(type),@(status),msg);
     }];
     

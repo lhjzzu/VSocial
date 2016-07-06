@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "VSocial"
-  s.version      = "1.0.3"
+  s.version      = "1.0.6"
   s.summary      = "this is a social component, including the login and share of WeChat,weibo,qq"
 
   s.description  = <<-DESC

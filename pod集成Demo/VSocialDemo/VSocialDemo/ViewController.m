@@ -47,9 +47,6 @@
     allShareBtn.titleLabel.font = [UIFont systemFontOfSize:12];
     [self.view addSubview:allShareBtn];
 
-    
-    
-    
 }
 
 - (void)allShareBtnClick:(UIButton *)sender {
